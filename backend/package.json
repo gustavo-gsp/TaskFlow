@@ -3,12 +3,11 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "type": "module",
   "scripts": {
-    "dev": "tsx watch src/app.ts",
-    "start": "node dist/app.js",
+    "dev": "tsx watch src/server.ts",
+    "start": "node dist/server.js",
     "build": "tsc",
-    "test": "jest"
+    "test": "jest --passWithNoTests"
   },
   "keywords": [],
   "author": "",

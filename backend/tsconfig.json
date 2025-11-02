@@ -3,12 +3,12 @@
   "compilerOptions": {
     // File Layout
     // "rootDir": "./src",
-    // "outDir": "./dist",
+    "outDir": "./dist",
 
     // Environment Settings
     // See also https://aka.ms/tsconfig/module
-    "module": "nodenext",
-    "target": "esnext",
+    "module": "commonjs",
+    "target": "ES2021",
     "types": [],
     // For nodejs:
     // "lib": ["esnext"],
@@ -34,11 +34,14 @@
 
     // Recommended Options
     "strict": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true,
     "jsx": "react-jsx",
-    "verbatimModuleSyntax": true,
+    "verbatimModuleSyntax": false,
     "isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,
-  }
+  },
+  "include": ["src"]
 }
