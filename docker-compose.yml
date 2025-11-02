@@ -1,0 +1,20 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres:16
+    container_name: taskflow-db
+    environment:
+      POSTGRES_USER: taskflow
+      POSTGRES_PASSWORD: expinhosoft
+      POSTGRES_DB: taskflow
+    ports:
+      - "5532:5532"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+  redis:
+    image: redis:7
+    container_name: taskflow-redis
+    ports:
+      - "6380:6380"
+volumes:
+  pgdata:
