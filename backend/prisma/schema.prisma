@@ -14,8 +14,21 @@ model User {
   password    String
   createdAt   DateTime @default(now())
   tasks       Task[]
-  timeEntries  TimeEntry[]
+  timeEntries TimeEntry[]
   prefs       UserPref?
+  sessions    Session[]
+}
+
+model Session {
+  id           String   @id @default(uuid())
+  userId       String
+  refreshToken String   @unique
+  userAgent    String?
+  ip           String?
+  isRevoked    Boolean  @default(false)
+  expiresAt    DateTime
+  createdAt    DateTime @default(now())
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
 }
 
 model Task {
